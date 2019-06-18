@@ -18,7 +18,6 @@ class IbmInfosController < ApplicationController
     @ibm_info = IbmInfo.new(ibm_info_params)
 
     b = Watir::Browser.new(:chrome, {:chromeOptions => {:args => ['--headless', '--window-size=1200x600']}})
-    
     ibm_login_url = 'https://www.ibm.com/account/reg/us-en/login?formid=urx-34710'
     b.goto(ibm_login_url)
 
