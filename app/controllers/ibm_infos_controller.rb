@@ -22,7 +22,7 @@ class IbmInfosController < ApplicationController
     options.binary = chrome_bin_path if chrome_bin_path # only use custom path on heroku
     options.add_argument('--headless') # this may be optional
     driver = Selenium::WebDriver.for :chrome, options: options
-
+    binding.pry
     b = Watir::Browser.new(:chrome, {:chromeOptions => {:args => ['--headless', '--window-size=1200x600']}})
     ibm_login_url = 'https://www.ibm.com/account/reg/us-en/login?formid=urx-34710'
     b.goto(ibm_login_url)
