@@ -19,7 +19,7 @@ default: &default
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: 5
 
 development:
   <<: *default
@@ -80,6 +80,8 @@ test:
 #
 production:
   <<: *default
+  host: localhost
   database: cognos_scraper_api_production
   username: cognos_scraper_api
-  password: <%= ENV['COGNOS_SCRAPER_API_DATABASE_PASSWORD'] %>
+  password: cognos_scraper_api
+
