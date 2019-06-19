@@ -11,6 +11,7 @@ class IbmInfosController < ApplicationController
   # GET /ibm_infos/1
   def show
     render json: @ibm_info
+    
   end
 
   # POST /ibm_infos
